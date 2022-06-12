@@ -62,7 +62,7 @@ spec:
       - name: springappcontainer
         image: dockerhandson/spring-boot-mongo
         ports:
-        - containerPort: 7070
+        - containerPort: 8080
         env:
         - name: MONGO_DB_USERNAME
           valueFrom:
@@ -85,8 +85,8 @@ spec:
   selector:
     app: springapp
   ports:
-  - port: 70
-    targetPort: 7070
+  - port: 80
+    targetPort: 8080
   type: NodePort
 ---
 # Mongo db pod with volumes(HostPath)
